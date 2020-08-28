@@ -144,36 +144,6 @@ input:focus {
 }
 
 </style>
-<div id="allOfIt" class="allOfIt">
-    <button id="open-button" class="open-button" onclick="openClose()">Fancy Chat</button>
-    <div class="form-container" id="myForm">
-        <span id="myClose" class="close" onclick="closeForm()">
-            &times;
-        </span>
-
-        <div id="messages" class="messages-area">
-            <div class="profile-area">
-                <img class="profile-image" src="https://raw.githubusercontent.com/fancy-flashcard/ai-chat/master/lucky-luke-on-horse.gif"
-                     alt="Card image">
-                <p></p>
-                <h3 style="text-align: center;">Lucky Luke<span class="dot"></span> </h3>
-                <br>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="column1">
-                <textarea placeholder="Your Message... :)" id="input" name="msg"></textarea>
-            </div>
-            <div class="column2">
-                <button onclick="addMessageFromUser()" class="send-button">
-                    <i class="fa fa-paper-plane" aria-hidden="true"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
 
 <script>
     let formIsOpen = false
@@ -383,3 +353,35 @@ shallChatWindowBeDisplayed()
 
 
 </script>
+
+<div id="allOfIt" class="allOfIt">
+    <button id="open-button" class="open-button" onclick="openClose()">Fancy Chat</button>
+    <div class="form-container" id="myForm">
+        <span id="myClose" class="close" onclick="closeForm()">
+            &times;
+        </span>
+
+        <div id="messages" class="messages-area">
+            <div class="profile-area">
+                <img class="profile-image" src="https://raw.githubusercontent.com/fancy-flashcard/ai-chat/master/lucky-luke-on-horse.gif"
+                     alt="Card image">
+                <p></p>
+                <h3 style="text-align: center;">Lucky Luke<span class="dot"></span> </h3>
+                <br>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column1">
+                <textarea placeholder="Your Message... :)" id="input" name="msg"></textarea>
+            </div>
+            <div class="column2">
+                <button onclick="addMessageFromUser()" class="send-button">
+                    <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
