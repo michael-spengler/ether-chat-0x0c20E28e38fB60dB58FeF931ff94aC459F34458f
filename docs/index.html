@@ -1,387 +1,402 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<html>
 
-<!-- <link type="text/css" rel="stylesheet" href="https://raw.githubusercontent.com/fancy-flashcard/ai-chat/master/static-assets/style.css"> -->
-<!-- <link type="text/css" rel="stylesheet" href="style.css"> -->
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<style>
-    .profile-image {
-  width: 100%;
-  border-radius: 50%;
-}
+    <!-- <link type="text/css" rel="stylesheet" href="https://raw.githubusercontent.com/fancy-flashcard/ai-chat/master/static-assets/style.css"> -->
+    <!-- <link type="text/css" rel="stylesheet" href="style.css"> -->
 
-.profile-area {
-  width: 40%;
-  margin-left: auto;
-  margin-right: auto;
-}
+    <style>
+        .profile-image {
+            width: 100%;
+            border-radius: 50%;
+        }
 
-.open-button {
-  z-index: 100;
-  padding-top: 13px;
-  padding-bottom: 13px;
-  padding-left: 13px;
-  padding-right: 13px;
-  font-size: 20px;
-  border: none;
-  border-radius: 24px;
-  cursor: pointer;
-  opacity: 1;
-  position: fixed;
-  bottom: 11px;
-  right: 15px;
-  background-color: #222222;
-  color: #facc02;
-}
+        .profile-area {
+            width: 40%;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-.form-container {
-  z-index: -1000000;
-  padding-left: 20px;
-  padding-top: 20px;
-  padding-right: 20px;
-  padding-bottom: 4px;
-  border: solid black;
-  background-color: white;
-  display: none;
-  position: fixed;
-  right: 4px;
-  position: fixed;
-  bottom: 70px;
-  right: 4px;
-  width: 320px;
-}
+        .open-button {
+            z-index: 100;
+            padding-top: 13px;
+            padding-bottom: 13px;
+            padding-left: 13px;
+            padding-right: 13px;
+            font-size: 20px;
+            border: none;
+            border-radius: 24px;
+            cursor: pointer;
+            opacity: 1;
+            position: fixed;
+            bottom: 11px;
+            right: 15px;
+            background-color: #222222;
+            color: #facc02;
+        }
 
-.form-container textarea {
-  width: 100%;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
-  border: none;
-  background: #f1f1f1;
-  resize: none;
-  min-height: 37px;
-  padding-top: 12px;
-  padding-left: 4px;
-}
+        .form-container {
+            z-index: -1000000;
+            padding-left: 20px;
+            padding-top: 20px;
+            padding-right: 20px;
+            padding-bottom: 4px;
+            border: solid black;
+            background-color: white;
+            display: none;
+            position: fixed;
+            right: 4px;
+            position: fixed;
+            bottom: 70px;
+            right: 4px;
+            width: 320px;
+        }
 
-textarea:focus,
-input:focus {
-  outline: none;
-}
+        .form-container textarea {
+            width: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            border: none;
+            background: #f1f1f1;
+            resize: none;
+            min-height: 37px;
+            padding-top: 12px;
+            padding-left: 4px;
+        }
 
-.messages-area {
-  height: 20vh;
-  position: relative;
-  margin: 0;
-  overflow: hidden;
-  margin-left: auto;
-  margin-right: auto;
-  padding-right: 1em;
-  padding-top: 1vh;
-  height: 380px;
-  overflow-y: scroll;
-  /* Hide scrollbar for IE, Edge and Firefox */
-  -ms-overflow-style: none;
-  /* IE and Edge */
-  scrollbar-width: none;
-  /* Firefox */
-}
+        textarea:focus,
+        input:focus {
+            outline: none;
+        }
 
-.messages-area::-webkit-scrollbar {
-  display: none;
-}
+        .messages-area {
+            height: 20vh;
+            position: relative;
+            margin: 0;
+            overflow: hidden;
+            margin-left: auto;
+            margin-right: auto;
+            padding-right: 1em;
+            padding-top: 1vh;
+            height: 380px;
+            overflow-y: scroll;
+            /* Hide scrollbar for IE, Edge and Firefox */
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
 
-.close {
-  cursor: pointer;
-  position: absolute;
-  margin-right: 12px;
-  margin-top: 16px;
-  font-size: 34px;
-  right: 10px;
-}
+        .messages-area::-webkit-scrollbar {
+            display: none;
+        }
 
-.send-button {
-  padding-top: 16px;
-  padding-bottom: 16px;
-  padding-left: 16px;
-  padding-right: 16px;
-  border-radius: 8px;
-  font-size: 20px;
-  border: none;
-  cursor: pointer;
-  opacity: 1;
-  background-color: #222222;
-  color: #facc02;
-}
+        .close {
+            cursor: pointer;
+            position: absolute;
+            margin-right: 12px;
+            margin-top: 16px;
+            font-size: 34px;
+            right: 10px;
+        }
 
-.column1 {
-  float: left;
-  width: 82%;
-}
+        .send-button {
+            padding-top: 16px;
+            padding-bottom: 16px;
+            padding-left: 16px;
+            padding-right: 16px;
+            border-radius: 8px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            opacity: 1;
+            background-color: #222222;
+            color: #facc02;
+        }
 
-.column2 {
-  float: left;
-  width: 18%;
-}
+        .column1 {
+            float: left;
+            width: 82%;
+        }
 
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+        .column2 {
+            float: left;
+            width: 18%;
+        }
 
-.allOfIt {
-  bottom: 0;
-  right: 0;
-}
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
 
-.dot {
-  height: 10px;
-  margin-bottom: 0px;
-  margin-left: 6px;
-  width: 10px;
-  background-color: rgb(2, 165, 2);
-  border-radius: 50%;
-  display: inline-block;
-}
+        .allOfIt {
+            bottom: 0;
+            right: 0;
+        }
 
-</style>
+        .dot {
+            height: 10px;
+            margin-bottom: 0px;
+            margin-left: 6px;
+            width: 10px;
+            background-color: rgb(2, 165, 2);
+            border-radius: 50%;
+            display: inline-block;
+        }
+    </style>
+
+</head>
+
+<body>
+   
+
+    
+
+    <div id="allOfIt" class="allOfIt">
+        <button id="open-button" class="open-button" onclick="openClose()">Fancy Chat</button>
+        <div class="form-container" id="myForm">
+            <span id="myClose" class="close" onclick="closeForm()">
+                &times;
+            </span>
+
+            <div id="messages" class="messages-area">
+                <div class="profile-area">
+                    <img class="profile-image"
+                         src="https://raw.githubusercontent.com/fancy-flashcard/ai-chat/master/lucky-luke-on-horse.gif"
+                         alt="Card image">
+                    <p></p>
+                    <h3 style="text-align: center;">Lucky Luke<span class="dot"></span> </h3>
+                    <br>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="column1">
+                    <textarea placeholder="Your Message... :)" id="input" name="msg"></textarea>
+                </div>
+                <div class="column2">
+                    <button onclick="addMessageFromUser()" class="send-button">
+                        <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
 <script>
     let formIsOpen = false
 
-function startListening() {
-    let theInputElement = document.getElementById('input')
-    theInputElement.addEventListener("keyup", function (event) {
-        if (event.keyCode === 13) {
-            event.preventDefault();
-            addMessageFromUser()
-        }
-    })
-}
-let messages = []
-let pause = false
-let welcomeSent = false
-startListening()
-
-function getLinkHTML(text, url) {
-    return `<a href="${url}">${text}</a>`
-}
-
-async function addMessageFromUser() {
-    const usersMessage = document.getElementById('input').value
-    if (usersMessage === '') {
-        alert('Why would you send an empty message?')
-    } else {
-        let messagesDiv = document.getElementById('messages')
-        messagesDiv.innerHTML = messagesDiv.innerHTML +
-            `
-                        <b>Du:</b><br>
-                        ${usersMessage}
-                        <p><br></p>
-        `
-        setTimeout(() => {
-            var objDiv = document.getElementById("messages");
-            objDiv.scrollTop = objDiv.scrollHeight;
-        }, 100)
-
-        document.getElementById('input').value = ''
-
-        const clearedUserMessage = replaceAllConfusingCharactersInUserInput(usersMessage)
-        const nlpURL = `http://fancy-chats.com:3025/getResponse?clientId=1598611657571&input=${clearedUserMessage}&languageCode=DE
-
-        console.log(nlpURL)
-        let response
-        try {
-            response = await fetch(encodeURI(nlpURL));
-        } catch (error) {
-            console.log(error.message)
-            if (!pause) {
-                const errorMessage = `Sorry. I'm chilling right now.`
-                setTimeout(() => {
-                    showResponseToTheUser(errorMessage)
-                }, 4000)
-                pause = true
-                setTimeout(() => {
-                    pause = false
-                }, 2 * 60 * 1000)
+    function startListening() {
+        let theInputElement = document.getElementById('input')
+        theInputElement.addEventListener("keyup", function (event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                addMessageFromUser()
             }
-        }
-        if (response.ok) {
-            const pauseBeforeShowWriting = Math.round(Math.random() * (1000 - 900) + 900)
-            setTimeout(() => {
-                showAssistantIsTyping()
-            }, pauseBeforeShowWriting)
+        })
+    }
+    let messages = []
+    let pause = false
+    let welcomeSent = false
+    startListening()
 
-            const result = await getResponseText(response)
-            const psiFactor = (1 + result.length / 100)
-            const waitingTime = psiFactor * Math.round(Math.random() * (2000 - 1600) + 1600)
-            console.log(`waitingTime: ${waitingTime}`)
-            setTimeout(() => {
-                showResponseToTheUser(result)
-            }, waitingTime)
+    function getLinkHTML(text, url) {
+        return `<a href="${url}">${text}</a>`
+    }
+
+    async function addMessageFromUser() {
+        const usersMessage = document.getElementById('input').value
+        if (usersMessage === '') {
+            alert('Why would you send an empty message?')
         } else {
-            alert("HTTP-Error: " + response.status);
+            let messagesDiv = document.getElementById('messages')
+            messagesDiv.innerHTML = messagesDiv.innerHTML +
+                `
+                            <b>Du:</b><br>
+                            ${usersMessage}
+                            <p><br></p>
+            `
+            setTimeout(() => {
+                var objDiv = document.getElementById("messages");
+                objDiv.scrollTop = objDiv.scrollHeight;
+            }, 100)
+
+            document.getElementById('input').value = ''
+
+            const clearedUserMessage = replaceAllConfusingCharactersInUserInput(usersMessage)
+            const nlpURL = `http://fancy-chats.com:3025/getResponse?clientId=1598611657571&input=${clearedUserMessage}&languageCode=DE`
+    
+            console.log(nlpURL)
+            let response
+            try {
+                response = await fetch(encodeURI(nlpURL));
+            } catch (error) {
+                console.log(error.message)
+                if (!pause) {
+                    const errorMessage = `Sorry.I'm chilling right now.`
+            setTimeout(() => {
+                showResponseToTheUser(errorMessage)
+            }, 4000)
+            pause = true
+            setTimeout(() => {
+                pause = false
+            }, 2 * 60 * 1000)
         }
     }
-}
-
-function showWelcomeMessage() {
-    let messagesDiv = document.getElementById('messages')
-
-    messagesDiv.innerHTML = messagesDiv.innerHTML.replace(`Lucky Luke is writing......<p><br></p>`, '')
-
-    messagesDiv.innerHTML = messagesDiv.innerHTML +
-        `<div>
-                <b>Lucky Luke:</b>
-                <br>
-            </div>
-            Hi :)
-            <p><br></p>`
-    setTimeout(() => {
-        var objDiv = document.getElementById("messages");
-        objDiv.scrollTop = objDiv.scrollHeight;
-    }, 100)
-
-}
-
-function showAssistantIsTyping() {
-    let messagesDiv = document.getElementById('messages')
-    messagesDiv.innerHTML = messagesDiv.innerHTML +
-        `Lucky Luke is writing......<p><br></p>`
-    setTimeout(() => {
-        var objDiv = document.getElementById("messages");
-        objDiv.scrollTop = objDiv.scrollHeight;
-    }, 100)
-
-}
-
-function replaceAllConfusingCharactersInUserInput(input) {
-    let cleared = input
-    while (cleared.indexOf('?') !== -1 || cleared.indexOf('/') !== -1) {
-        cleared = cleared
-            .replace('?', '')
-            .replace('/', '')
-    }
-
-    return cleared
-}
-
-async function getResponseText(response) {
-
-    let json = await response.json();
-    let text
-    let link
-    if (json.answer === undefined) {
-        text = json.defaultResponses[0]
-    } else {
-        text = json.answer.split(`https://`)[0]
-        link = json.answer.split(`https://`)[1]
-    }
-    const formattedAnswer = text;
-    let result = (link === undefined) ? text : getLinkHTML(text, link)
-    return result
-}
-
-async function showResponseToTheUser(result) {
-    let messagesDiv = document.getElementById('messages')
-
-    messagesDiv.innerHTML = messagesDiv.innerHTML.replace(`Lucky Luke is writing......<p><br></p>`, '') +
-        `
-                        <b>Lucky Luke:</b><br>
-                        ${result}
-                        <p><br></p>
-        `
-
-    setTimeout(() => {
-        var objDiv = document.getElementById("messages");
-        objDiv.scrollTop = objDiv.scrollHeight;
-    }, 100)
-}
-
-function openClose() {
-    if (formIsOpen) {
-        closeForm()
-    } else {
-        openForm()
-    }
-
-}
-
-function openForm() {
-    console.log('opening chat window')
-    const theForm = document.getElementById("myForm");
-    theForm.style.zIndex = 1000000
-    theForm.style.display = "block"
-    const theClose = document.getElementById("myClose");
-    theClose.style.zIndex = 1000001
-    formIsOpen = true
-
-    if (!welcomeSent) {
+    if (response.ok) {
         const pauseBeforeShowWriting = Math.round(Math.random() * (1000 - 900) + 900)
         setTimeout(() => {
             showAssistantIsTyping()
         }, pauseBeforeShowWriting)
 
+        const result = await getResponseText(response)
+        const psiFactor = (1 + result.length / 100)
+        const waitingTime = psiFactor * Math.round(Math.random() * (2000 - 1600) + 1600)
+        console.log(`waitingTime: ${waitingTime}`)
         setTimeout(() => {
-            showWelcomeMessage()
-        }, pauseBeforeShowWriting + 1000)
-
-        welcomeSent = true
-    }
-
-}
-
-function closeForm() {
-    const theForm = document.getElementById("myForm");
-    theForm.style.zIndex = -1000000
-    theForm.style.display = "none";
-    const theClose = document.getElementById("myClose");
-    theClose.style.zIndex = -1000000
-    formIsOpen = false
-}
-
-function shallChatWindowBeDisplayed() {
-    if (true) {
-        console.log("chat button will be displayed")
+            showResponseToTheUser(result)
+        }, waitingTime)
     } else {
-        console.log("chat button will not displayed")
-        const allOfIt = document.getElementById("allOfIt");
-        allOfIt.style.display = "none";
-        allOfIt.style.zIndex = -100000000000
+        alert("HTTP-Error: " + response.status);
     }
-}
-shallChatWindowBeDisplayed()
+        }
+    }
+
+    function showWelcomeMessage() {
+        let messagesDiv = document.getElementById('messages')
+
+        messagesDiv.innerHTML = messagesDiv.innerHTML.replace(`Lucky Luke is writing......<p><br></p>`, '')
+
+        messagesDiv.innerHTML = messagesDiv.innerHTML +
+            `<div>
+                    <b>Lucky Luke:</b>
+                    <br>
+                </div>
+                Hi :)
+                <p><br></p>`
+        setTimeout(() => {
+            var objDiv = document.getElementById("messages");
+            objDiv.scrollTop = objDiv.scrollHeight;
+        }, 100)
+
+    }
+
+    function showAssistantIsTyping() {
+        let messagesDiv = document.getElementById('messages')
+        messagesDiv.innerHTML = messagesDiv.innerHTML +
+            `Lucky Luke is writing......<p><br></p>`
+        setTimeout(() => {
+            var objDiv = document.getElementById("messages");
+            objDiv.scrollTop = objDiv.scrollHeight;
+        }, 100)
+
+    }
+
+    function replaceAllConfusingCharactersInUserInput(input) {
+        let cleared = input
+        while (cleared.indexOf('?') !== -1 || cleared.indexOf('/') !== -1) {
+            cleared = cleared
+                .replace('?', '')
+                .replace('/', '')
+        }
+
+        return cleared
+    }
+
+    async function getResponseText(response) {
+
+        let json = await response.json();
+        let text
+        let link
+        if (json.answer === undefined) {
+            text = json.defaultResponses[0]
+        } else {
+            text = json.answer.split(`https://`)[0]
+            link = json.answer.split(`https://`)[1]
+        }
+        const formattedAnswer = text;
+        let result = (link === undefined) ? text : getLinkHTML(text, link)
+        return result
+    }
+
+    async function showResponseToTheUser(result) {
+        let messagesDiv = document.getElementById('messages')
+
+        messagesDiv.innerHTML = messagesDiv.innerHTML.replace(`Lucky Luke is writing......<p><br></p>`, '') +
+            `
+                            <b>Lucky Luke:</b><br>
+                            ${result}
+                            <p><br></p>
+            `
+
+        setTimeout(() => {
+            var objDiv = document.getElementById("messages");
+            objDiv.scrollTop = objDiv.scrollHeight;
+        }, 100)
+    }
+
+    function openClose() {
+        if (formIsOpen) {
+            closeForm()
+        } else {
+            openForm()
+        }
+
+    }
+
+    function openForm() {
+        console.log('opening chat window')
+        const theForm = document.getElementById("myForm");
+        theForm.style.zIndex = 1000000
+        theForm.style.display = "block"
+        const theClose = document.getElementById("myClose");
+        theClose.style.zIndex = 1000001
+        formIsOpen = true
+
+        if (!welcomeSent) {
+            const pauseBeforeShowWriting = Math.round(Math.random() * (1000 - 900) + 900)
+            setTimeout(() => {
+                showAssistantIsTyping()
+            }, pauseBeforeShowWriting)
+
+            setTimeout(() => {
+                showWelcomeMessage()
+            }, pauseBeforeShowWriting + 1000)
+
+            welcomeSent = true
+        }
+
+    }
+
+    function closeForm() {
+        const theForm = document.getElementById("myForm");
+        theForm.style.zIndex = -1000000
+        theForm.style.display = "none";
+        const theClose = document.getElementById("myClose");
+        theClose.style.zIndex = -1000000
+        formIsOpen = false
+    }
+
+    function shallChatWindowBeDisplayed() {
+        if (true) {
+            console.log("chat button will be displayed")
+        } else {
+            console.log("chat button will not displayed")
+            const allOfIt = document.getElementById("allOfIt");
+            allOfIt.style.display = "none";
+            allOfIt.style.zIndex = -100000000000
+        }
+    }
+    shallChatWindowBeDisplayed()
 
 
 </script>
 
-<div id="allOfIt" class="allOfIt">
-    <button id="open-button" class="open-button" onclick="openClose()">Fancy Chat</button>
-    <div class="form-container" id="myForm">
-        <span id="myClose" class="close" onclick="closeForm()">
-            &times;
-        </span>
 
-        <div id="messages" class="messages-area">
-            <div class="profile-area">
-                <img class="profile-image" src="https://raw.githubusercontent.com/fancy-flashcard/ai-chat/master/lucky-luke-on-horse.gif"
-                     alt="Card image">
-                <p></p>
-                <h3 style="text-align: center;">Lucky Luke<span class="dot"></span> </h3>
-                <br>
-            </div>
-        </div>
+</body>
 
-        <div class="row">
-            <div class="column1">
-                <textarea placeholder="Your Message... :)" id="input" name="msg"></textarea>
-            </div>
-            <div class="column2">
-                <button onclick="addMessageFromUser()" class="send-button">
-                    <i class="fa fa-paper-plane" aria-hidden="true"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
+</html>
