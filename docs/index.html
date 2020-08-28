@@ -309,9 +309,10 @@
 
     async function getResponseText(response) {
 
-        let json = await response.json();
+        let json = (await response.json()).nlpResult;
         let text
         let link
+        
         if (json.answer === undefined) {
             text = json.defaultResponses[0]
         } else {
