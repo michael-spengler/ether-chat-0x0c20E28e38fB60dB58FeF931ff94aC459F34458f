@@ -237,7 +237,7 @@
             } catch (error) {
                 console.log(error.message)
                 if (!pause) {
-                    const errorMessage = `Sorry.I'm chilling right now.`
+                    const errorMessage = `I need some Ether to continue :)`
             setTimeout(() => {
                 showResponseToTheUser(errorMessage)
             }, 4000)
@@ -314,7 +314,7 @@
         let link
         
         if (json.answer === undefined) {
-            text = json.defaultResponses[0]
+            text = 'I do not know what to say :)'
         } else {
             text = json.answer.split(`https://`)[0]
             link = json.answer.split(`https://`)[1]
