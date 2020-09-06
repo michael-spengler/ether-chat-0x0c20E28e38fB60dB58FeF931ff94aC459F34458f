@@ -1,7 +1,6 @@
 [
     {
-        "client": "this will be filled automatically",
-        "address": "this will be filled automatically",
+        "wallet": "0x0c20E28e38fB60dB58FeF931ff94aC459F34458f",
         "trainingData": {
             "documents": [
                 {
