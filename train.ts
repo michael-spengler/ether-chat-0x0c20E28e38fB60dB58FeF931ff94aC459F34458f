@@ -8,6 +8,6 @@ logger.info(response)
 
 
 async function getTrainingData() {
-    const fileContent = JSON.parse(await Persistence.readFromLocalFile(`${Deno.cwd()}/0x0c20E28e38fB60dB58FeF931ff94aC459F34458f.json`))
+    const fileContent = JSON.parse(await Persistence.readFromLocalFile(`${Deno.cwd()}/training-data.json`))
     return fileContent.trainingData
 }
