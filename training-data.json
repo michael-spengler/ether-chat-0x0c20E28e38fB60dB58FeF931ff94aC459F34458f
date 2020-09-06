@@ -1,54 +1,50 @@
-[
-    {
-        "wallet": "0x0c20E28e38fB60dB58FeF931ff94aC459F34458f",
-        "trainingData": {
-            "documents": [
-                {
-                    "languageCode": "en",
-                    "input": "Hi",
-                    "intent": "greetings.hi"
-                },
-                {
-                    "languageCode": "en",
-                    "input": "Hello",
-                    "intent": "greetings.hi"
-                },
-                {
-                    "languageCode": "en",
-                    "input": "ciao",
-                    "intent": "greetings.bye"
-                },
-                {
-                    "languageCode": "en",
-                    "input": "c u",
-                    "intent": "greetings.bye"
-                }
-            ],
-            "answers": [
-                {
-                    "languageCode": "en",
-                    "intent": "greetings.hi",
-                    "output": ":) Hi"
-                },
-                {
-                    "languageCode": "en",
-                    "intent": "greetings.hi",
-                    "output": ":) Hey Hey"
-                },
-                {
-                    "languageCode": "en",
-                    "intent": "greetings.bye",
-                    "output": ":) Hasta la pasta"
-                },
-                {
-                    "languageCode": "en",
-                    "intent": "greetings.bye",
-                    "output": ":) c u soon"
-                }
-            ],
-            "languageCodes": [
-                "en"
-            ]
+{
+    "wallet": "0x0c20E28e38fB60dB58FeF931ff94aC459F34458f",
+    "documents": [
+        {
+            "languageCode": "en",
+            "input": "Hi",
+            "intent": "greetings.hi"
+        },
+        {
+            "languageCode": "en",
+            "input": "Hello",
+            "intent": "greetings.hi"
+        },
+        {
+            "languageCode": "en",
+            "input": "ciao",
+            "intent": "greetings.bye"
+        },
+        {
+            "languageCode": "en",
+            "input": "c u",
+            "intent": "greetings.bye"
         }
-    }
-]
+    ],
+    "answers": [
+        {
+            "languageCode": "en",
+            "intent": "greetings.hi",
+            "output": ":) Hi"
+        },
+        {
+            "languageCode": "en",
+            "intent": "greetings.hi",
+            "output": ":) Hey Hey"
+        },
+        {
+            "languageCode": "en",
+            "intent": "greetings.bye",
+            "output": ":) Hasta la pasta"
+        },
+        {
+            "languageCode": "en",
+            "intent": "greetings.bye",
+            "output": ":) c u soon"
+        }
+    ],
+    "languageCodes": [
+        "en"
+    ]
+}

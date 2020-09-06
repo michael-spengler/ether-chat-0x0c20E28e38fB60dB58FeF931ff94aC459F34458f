@@ -9,5 +9,6 @@ logger.info(response)
 
 async function getTrainingData() {
     const fileContent = JSON.parse(await Persistence.readFromLocalFile(`${Deno.cwd()}/training-data.json`))
-    return fileContent.trainingData
+   
+    return fileContent
 }
