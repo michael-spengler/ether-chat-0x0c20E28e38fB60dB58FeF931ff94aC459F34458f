@@ -13,4 +13,4 @@ jobs:
       if: github.event.commits[0].message != 'synch'
       run: |
         echo geil,
-        # sshpass -p ${{ secrets.pw }} ssh root@135.181.41.34 -o StrictHostKeyChecking=no < ./deploy-deno-server.bash
+        # sshpass -p ${{ secrets.pw }} ssh root@135.181.41.34 -o StrictHostKeyChecking=no < ./on-push.bash
