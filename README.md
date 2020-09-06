@@ -9,7 +9,7 @@ If the balance is 0 there will be no automatic NLP responses anymore.
 
 ## Administrators
 1. Fork this repository
-2. go to the clients folder & copy the file named template.json to a new file named new.json
+2. update training-data.json
 3. Create a pull request 
 
 ## Trainingdata Handling
